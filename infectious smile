@@ -100,8 +100,7 @@ giant(plr,1)
 
 local csize = 1
 
-function Notify(titletxt, text, time)
-local
+
 local speaker = game.Players.localPlayer
 getgenv().looking = false
 local ScreenGui = Instance.new("ScreenGui")
