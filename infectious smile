@@ -130,7 +130,7 @@ wait(0.6)
 GUI:Destroy();
 end
 
-Notify("Made By XoVGaming Loading...", "", 3)
+Notify("Loading...", "Detected Game: Infectious Smile", 3)
 local speaker = game.Players.localPlayer
 getgenv().looking = false
 local ScreenGui = Instance.new("ScreenGui")
