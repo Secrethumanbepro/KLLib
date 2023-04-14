@@ -99,8 +99,6 @@ giant(plr,1)
 
 
 local csize = 1
-
-
 local speaker = game.Players.localPlayer
 getgenv().looking = false
 local ScreenGui = Instance.new("ScreenGui")
@@ -1611,13 +1609,13 @@ tab3:Button("Delete Infectors (Some)",function()
 	end
 	end
 	end)
-TextButton.Name = "open"
-TextButton.Position = UDim2.new(0.9, 38, 0.01, 0)
+TextButton.Name = "close"
+TextButton.Position = UDim2.new(0.8379999, 91, 0.01, 0)
 TextButton.Parent = ScreenGui
 TextButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
 TextButton.Size = UDim2.new(0, 30, 0, 24)
 TextButton.Font = Enum.Font.Cartoon
-TextButton.Text = "Open"
+TextButton.Text = "Close"
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextSize = 13.000
 TextButton.Visible = true
@@ -1626,16 +1624,16 @@ TextButton.MouseButton1Click:connect(function()
 	sound.SoundId = "rbxassetid://1673280232"
 	sound.Parent = game:GetService("SoundService")
 	sound:Play()
-Library:ToggleUI()
 if Open then
-Library:ToggleUI()
-TextButton.BackgroundColor3 = Color3.fromRGB(255,0,0)
-TextButton.Text = "Close"
-Open = false
-else
 Library:ToggleUI()
 TextButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
 TextButton.Text = "Open"
+
+Open = false
+else
+Library:ToggleUI()
+TextButton.BackgroundColor3 = Color3.fromRGB(255,0,0)
+TextButton.Text = "Close"
 Open = true
 end
 	end)
