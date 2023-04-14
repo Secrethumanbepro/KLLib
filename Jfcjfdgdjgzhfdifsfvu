@@ -1,0 +1,228 @@
+local Player = game:GetService('Players').LocalPlayer
+repeat wait() until Player.Character
+local Character = Player.Character
+
+TrailSettings = {
+	Lifetime = 0.5,
+	Texture = 'rbxassetid://31270182',
+	--Color1 is for UpperBody and Accessories, Color2 is for Lower Body
+	Color1 = ColorSequence.new(BrickColor.new('Bright blue').Color,BrickColor.new('Bright yellow').Color),
+	Color2 = ColorSequence.new(BrickColor.new('Bright blue').Color,BrickColor.new('Bright yellow').Color),
+	AllBody = false,
+	UpperBodyOnly = true,
+	LowerBodyOnly = false,
+	Accessories = false,
+	Extras = true,
+	R15 = false, --Change to true if you're using R15
+	R15Parts = {
+		'UpperTorso',
+		'LowerTorso',
+	}
+}
+
+local Trail; --Making other Trails uses this in this Script
+
+--UpperBody Function
+UpperBody = function()
+	if TrailSettings.R15 == false then
+		A0 = Instance.new('Attachment',Character.Torso)
+		A1 = Instance.new('Attachment',Character.Head)
+	A2 = Instance.new('Attachment',Character['Right Arm'])
+	A3 = Instance.new('Attachment',Character['Left Arm'])
+Trail = Instance.new('Trail',Character)
+Trail.Attachment0 = A0
+Trail.Attachment1 = A1
+Trail.Texture = TrailSettings.Texture
+Trail.Color = TrailSettings.Color1
+Trail.Lifetime = TrailSettings.Lifetime
+local Trail2 = Trail:Clone()
+Trail2.Parent = Character
+Trail2.Attachment1 = A2
+local Trail3 = Trail:Clone()
+Trail3.Parent = Character
+Trail3.Attachment1 = A3
+local Trail6 = Trail:Clone()
+Trail6.Parent = Character
+Trail6.Attachment0 = A1
+Trail6.Attachment1 = A2
+local Trail7 = Trail:Clone()
+Trail7.Parent = Character
+Trail7.Attachment0 = A1
+Trail7.Attachment1 = A3
+	else
+	A0 = Instance.new('Attachment',Character[TrailSettings.R15Parts[1]])
+	A0R = Instance.new('Attachment',Character[TrailSettings.R15Parts[2]])
+	A1 = Instance.new('Attachment',Character.Head)
+	A2 = Instance.new('Attachment',Character['RightUpperArm'])
+	A2R = Instance.new('Attachment',Character['RightLowerArm'])
+	A3 = Instance.new('Attachment',Character['LeftUpperArm'])
+	A3R = Instance.new('Attachment',Character['LeftLowerArm'])
+Trail = Instance.new('Trail',Character)
+Trail.Attachment0 = A0
+Trail.Attachment1 = A1
+Trail.Texture = TrailSettings.Texture
+Trail.Color = TrailSettings.Color1
+Trail.Lifetime = TrailSettings.Lifetime
+local Trail2 = Trail:Clone()
+Trail2.Parent = Character
+Trail2.Attachment1 = A2
+local Trail3 = Trail:Clone()
+Trail3.Parent = Character
+Trail3.Attachment1 = A3
+local Trail6 = Trail:Clone()
+Trail6.Parent = Character
+Trail6.Attachment0 = A1
+Trail6.Attachment1 = A2
+local Trail7 = Trail:Clone()
+Trail7.Parent = Character
+Trail7.Attachment0 = A1
+Trail7.Attachment1 = A3
+--R15 Trails
+local Trail1R = Trail:Clone()
+Trail1R.Parent = Character
+Trail1R.Attachment1 = A2R
+local Trail2R = Trail:Clone()
+Trail2R.Parent = Character
+Trail2R.Attachment1 = A3R
+local Trail6R = Trail:Clone()
+Trail6.Parent = Character
+Trail6.Attachment0 = A1
+Trail6.Attachment1 = A2R
+local Trail7R = Trail:Clone()
+Trail7.Parent = Character
+Trail7.Attachment0 = A1
+Trail7.Attachment1 = A3R
+end
+end
+
+--Lower Body Function
+LowerBody = function()
+	if TrailSettings.R15 == false then
+		A4 = Instance.new('Attachment',Character['Right Leg'])
+		A5 = Instance.new('Attachment',Character['Left Leg'])
+local Trail4 = Trail:Clone()
+Trail4.Parent = Character
+Trail4.Attachment1 = A4
+local Trail5 = Trail:Clone()
+Trail5.Parent = Character
+Trail5.Attachment1 = A5
+local Trail8 = Trail:Clone()
+Trail8.Parent = Character
+Trail8.Attachment0 = A2
+Trail8.Attachment1 = A4
+Trail8.Color = TrailSettings.Color2
+local Trail9 = Trail:Clone()
+Trail9.Parent = Character
+Trail9.Attachment0 = A3
+Trail9.Attachment1 = A5
+Trail9.Color = TrailSettings.Color2
+local FT = Trail:Clone()
+FT.Parent = Character
+FT.Attachment0 = A4
+FT.Attachment1 = A5
+FT.Color = TrailSettings.Color2
+else
+		A4 = Instance.new('Attachment',Character['RightLowerLeg'])
+		A4R = Instance.new('Attachment',Character['RightUpperLeg'])
+		A5 = Instance.new('Attachment',Character['LeftLowerLeg'])
+		A5R = Instance.new('Attachment',Character['LeftUpperLeg'])
+		local Trail4 = Trail:Clone()
+Trail4.Parent = Character
+Trail4.Attachment1 = A4
+local Trail5 = Trail:Clone()
+Trail5.Parent = Character
+Trail5.Attachment1 = A5
+local Trail8 = Trail:Clone()
+Trail8.Parent = Character
+Trail8.Attachment0 = A2
+Trail8.Attachment1 = A4
+Trail8.Color = TrailSettings.Color2
+local Trail9 = Trail:Clone()
+Trail9.Parent = Character
+Trail9.Attachment0 = A3
+Trail9.Attachment1 = A5
+Trail9.Color = TrailSettings.Color2
+local FT = Trail:Clone()
+FT.Parent = Character
+FT.Attachment0 = A4
+FT.Attachment1 = A5
+FT.Color = TrailSettings.Color2
+--R15 Trails
+local Trail3R = Trail:Clone()
+Trail3R.Parent = Character
+Trail3R.Attachment1 = A4R
+local Trail4R = Trail:Clone()
+Trail4R.Parent = Character
+Trail4R.Attachment1 = A5R
+local Trail8 = Trail:Clone()
+Trail8.Parent = Character
+Trail8.Attachment0 = A2R
+Trail8.Attachment1 = A4R
+Trail8.Color = TrailSettings.Color2
+local Trail9 = Trail:Clone()
+Trail9.Parent = Character
+Trail9.Attachment0 = A3R
+Trail9.Attachment1 = A5R
+Trail9.Color = TrailSettings.Color2
+local FT2R = Trail:Clone()
+FT2R.Parent = Character
+FT2R.Attachment0 = A4R
+FT2R.Attachment1 = A5R
+FT2R.Color = TrailSettings.Color2
+end
+end
+
+--All Body Function calling Both Functions
+AllBody = function()
+	UpperBody()
+	LowerBody()
+end
+
+--Checking to make sure that Only some Variables are Selected else do All Body
+if TrailSettings.AllBody == true and TrailSettings.UpperBodyOnly == true and TrailSettings.LowerBodyOnly == true then
+	TrailSettings.UpperBodyOnly = false
+	TrailSettings.LowerBodyOnly = false
+elseif TrailSettings.AllBody == true and TrailSettings.UpperBodyOnly == false and TrailSettings.LowerBodyOnly == true then
+	TrailSettings.UpperBodyOnly = false
+	TrailSettings.LowerBodyOnly = false
+elseif TrailSettings.AllBody == true and TrailSettings.UpperBodyOnly == true and TrailSettings.LowerBodyOnly == false then
+	TrailSettings.UpperBodyOnly = false
+	TrailSettings.LowerBodyOnly = false
+elseif TrailSettings.AllBody == false and TrailSettings.UpperBodyOnly == true and TrailSettings.LowerBodyOnly == true then
+	TrailSettings.AllBody = true
+	TrailSettings.UpperBodyOnly = false
+	TrailSettings.LowerBodyOnly = false
+end
+
+--Call Trail Functions
+if TrailSettings.UpperBodyOnly == true then
+	UpperBody()
+	print('Called Upper Body Trail')
+elseif TrailSettings.LowerBodyOnly == true then
+	LowerBody()
+	print('Called Lower Body Trail')
+elseif TrailSettings.AllBody == true then
+	AllBody()
+	print('Called Full Body Trail')
+end
+
+--Trails for Accessories
+if TrailSettings.Accessories == true then
+for Index,Item in pairs(Character:GetChildren()) do
+	if Item:IsA'Accessory' then
+		local AA = Instance.new('Attachment',Item.Handle)
+		local ATrail = Trail:Clone()
+		ATrail.Parent = Character
+		ATrail.Attachment1 = AA
+	end
+end
+end
+
+--Extras
+if TrailSettings.Extras == true then
+	--Making an Invisible Platform Part
+local a = Instance.new('Part',Character)
+a.CanCollide = false
+a.Size = Vector3.new(2,.2,2)
+a.Transparency = 1
+end
