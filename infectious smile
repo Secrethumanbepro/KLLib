@@ -1,0 +1,2058 @@
+
+
+getgenv().Open = true
+function giant(p, size)
+local pchar = p.Character
+if pchar then
+local function scale(chr,scl)
+
+for _,v in pairs(pchar:GetChildren()) do
+if v:IsA("Hat") then
+v:Clone()
+v.Parent = game.Lighting
+end
+end
+
+local Head = chr['Head']
+local Torso = chr['Torso']
+local LA = chr['Left Arm']
+local RA = chr['Right Arm']
+local LL = chr['Left Leg']
+local RL = chr['Right Leg']
+local HRP = chr['HumanoidRootPart']
+
+wait(0.1)
+
+Head.formFactor = 3
+Torso.formFactor = 3
+LA.formFactor = 3
+RA.formFactor = 3
+LL.formFactor = 3
+RL.formFactor = 3
+HRP.formFactor = 3
+
+Head.Size = Vector3.new(scl * 2, scl, scl)
+Torso.Size = Vector3.new(scl * 2, scl * 2, scl)
+LA.Size = Vector3.new(scl, scl * 2, scl)
+RA.Size = Vector3.new(scl, scl * 2, scl)
+LL.Size = Vector3.new(scl, scl * 2, scl)
+RL.Size = Vector3.new(scl, scl * 2, scl)
+HRP.Size = Vector3.new(scl * 2, scl * 2, scl)
+
+local Motor1 = Instance.new('Motor6D', Torso)
+Motor1.Part0 = Torso
+Motor1.Part1 = Head
+Motor1.C0 = CFrame.new(0, 1 * scl, 0) * CFrame.Angles(-1.6, 0, 3.1)
+Motor1.C1 = CFrame.new(0, -0.5 * scl, 0) * CFrame.Angles(-1.6, 0, 3.1)
+Motor1.Name = "Neck"
+
+local Motor2 = Instance.new('Motor6D', Torso)
+Motor2.Part0 = Torso
+Motor2.Part1 = LA
+Motor2.C0 = CFrame.new(-1 * scl, 0.5 * scl, 0) * CFrame.Angles(0, -1.6, 0)
+
+
+Motor2.C1 = CFrame.new(0.5 * scl, 0.5 * scl, 0) * CFrame.Angles(0, -1.6, 0)
+Motor2.Name = "Left Shoulder"
+
+local Motor3 = Instance.new('Motor6D', Torso)
+Motor3.Part0 = Torso
+Motor3.Part1 = RA
+Motor3.C0 = CFrame.new(1 * scl, 0.5 * scl, 0) * CFrame.Angles(0, 1.6, 0)
+Motor3.C1 = CFrame.new(-0.5 * scl, 0.5 * scl, 0) * CFrame.Angles(0, 1.6, 0)
+Motor3.Name = "Right Shoulder"
+
+local Motor4 = Instance.new('Motor6D', Torso)
+Motor4.Part0 = Torso
+Motor4.Part1 = LL
+Motor4.C0 = CFrame.new(-1 * scl, -1 * scl, 0) * CFrame.Angles(0, -1.6, 0)
+Motor4.C1 = CFrame.new(-0.5 * scl, 1 * scl, 0) * CFrame.Angles(0, -1.6, 0)
+Motor4.Name = "Left Hip"
+
+local Motor5 = Instance.new('Motor6D', Torso)
+Motor5.Part0 = Torso
+Motor5.Part1 = RL
+Motor5.C0 = CFrame.new(1 * scl, -1 * scl, 0) * CFrame.Angles(0, 1.6, 0)
+Motor5.C1 = CFrame.new(0.5 * scl, 1 * scl, 0) * CFrame.Angles(0, 1.6, 0)
+Motor5.Name = "Right Hip"
+
+local Motor6 = Instance.new('Motor6D', HRP)
+Motor6.Part0 = HRP
+Motor6.Part1 = Torso
+Motor6.C0 = CFrame.new(0, 0, 0) * CFrame.Angles(-1.6, 0, -3.1)
+Motor6.C1 = CFrame.new(0, 0, 0) * CFrame.Angles(-1.6, 0, -3.1)
+
+end
+
+scale(pchar, size)
+
+for _,v in pairs(game.Lighting:GetChildren()) do
+if v:IsA("Hat") then
+v.Parent = pchar
+end
+end
+end
+end
+
+local plr = game.Players.LocalPlayer
+giant(plr,1)
+
+
+local csize = 1
+
+function Notify(titletxt, text, time)
+local GUI = Instance.new("ScreenGui")
+local Main = Instance.new("Frame", GUI)
+local title = Instance.new("TextLabel", Main)
+local message = Instance.new("TextLabel", Main)
+GUI.Name = "Notification"
+GUI.Parent = game.CoreGui
+Main.Name = "MainFrame"
+Main.BackgroundColor3 = Color3.new(0.156863, 0.156863, 0.156863)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(1, 5, 0, 50)
+Main.Size = UDim2.new(0, 0, 0, 0)
+
+title.BackgroundColor3 = Color3.new(0, 0, 0)
+title.BackgroundTransparency = 0.89999997615814
+title.Size = UDim2.new(1, 0, 0, 30)
+title.Font = Enum.Font.SourceSansSemibold
+title.Text = titletxt
+title.TextColor3 = Color3.new(1, 1, 1)
+title.TextSize = 17
+
+
+wait(0.1)
+Main:TweenPosition(UDim2.new(1, -330, 0, 50), "Out", "Bounce", 0.5)
+wait(time)
+Main:TweenPosition(UDim2.new(1, 5, 0, 50), "Out", "Bounce", 0.5)
+wait(0.6)
+GUI:Destroy();
+end
+
+Notify("Made By XoVGaming Loading...", "", 3)
+local speaker = game.Players.localPlayer
+getgenv().looking = false
+local ScreenGui = Instance.new("ScreenGui")
+local TextButton = Instance.new("TextButton")
+local TextButton2 = Instance.new("TextButton")
+local me = Instance.new("Frame")
+local n2 = Instance.new("TextButton")
+local n3 = Instance.new("TextButton")
+local tButton = Instance.new("TextButton")
+local Reach = Instance.new("TextButton")
+local GiveTool = Instance.new("TextButton")
+local Give_Tool = Instance.new("TextButton")
+local Reachv2 = Instance.new("TextButton")
+local Rme = Instance.new("TextButton")
+local BringPlayer = Instance.new("TextBox")
+local Sl = Instance.new("TextButton")
+local Reachb = Instance.new("TextButton")
+ 
+ScreenGui.Parent = game.CoreGui
+
+
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/UI-Library/main/Source/MyUILib(Unamed).lua"))()
+local Window = Library:Create("Infectious Smile Lib (KLGui)") -- any name
+
+local tab1 = Window:Tab("Home")
+local tab2 = Window:Tab("ESP")
+local tab3 = Window:Tab("ReachEditor")
+tab1:Button("Collect All Droped Keys",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	for i,v in pairs(game.Workspace.Particles:GetDescendants()) do
+	if v.Name == "Key" or v.Name == "Red Key" or v.Name == "Green Key" then
+	speaker.Character:FindFirstChildOfClass("Humanoid").Sit = true
+	local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local Y = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local Z = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+
+	game.Players.localPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+	wait(0.2)
+	game.Players.localPlayer.Character:FindFirstChildOfClass("Humanoid").Jump = true
+
+	game.Players.localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(X, Y, Z)
+
+
+	end
+	end
+	end)
+tab1:Button("Search For Someone Who Has A Key",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	for index, child in pairs(game.Players:GetChildren()) do
+	if child.Backpack:FindFirstChild("Green Key") or child.Character:FindFirstChild("Green Key") then
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Green Key Detected"; -- the title (ofc)
+		Text = "Hello There I Have A Green Key And My Name is "..child.Name; -- what the text says (ofc)
+		Icon = game.Players:GetUserThumbnailAsync(child.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420); -- the image if u want.
+		Duration = 7; -- how long the notification should in secounds
+	})
+
+	elseif child.Backpack:FindFirstChild("Red Key") or child.Character:FindFirstChild("Red Key") then
+
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Red Key Detected"; -- the title (ofc)
+		Text = "Hello There I Have A Red Key And My Name is "..child.Name; -- what the text says (ofc)
+		Icon = game.Players:GetUserThumbnailAsync(child.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420); -- the image if u want.
+		Duration = 7; -- how long the notification should in secounds
+	})
+
+	elseif child.Backpack:FindFirstChild("Key") or child.Character:FindFirstChild("Key") then
+
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "White Key Detected"; -- the title (ofc)
+		Text = "Hello There I Have A White Key And My Name is "..child.Name; -- what the text says (ofc)
+		Icon = game.Players:GetUserThumbnailAsync(child.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420); -- the image if u want.
+		Duration = 7; -- how long the notification should in secounds
+	})
+	end end end)
+tab1:Button("Fixcam",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	game.workspace.Camera.CameraType = "Watch"
+	wait(0.2)
+	game.workspace.Camera.CameraType = "Custom"
+	end)
+tab1:Button("Respawn",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local currentY = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local currentZ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+	game.Players.LocalPlayer.Character:Destroy()
+	wait(5.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentX, currentY, currentZ)
+end)
+tab1:Button("LookOn Seismic Activity",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+if getgenv().looking == false then
+getgenv().looking = true
+game.Workspace.Camera.CameraType = "Scriptable" 
+
+game.Workspace.Camera.CameraType = "Scriptable" 
+local CFrameEnd = CFrame.new(-13.6660118, 4.8471837, -17.6781578, 0.0137120467, -0.19432047, 0.980842233, -2.32830671e-10, 0.980934501, 0.194338724, -0.999906063, -0.00266478187, 0.0134506179)
+local Time = 1
+local look =  game:GetService("TweenService"):Create(game.Workspace.Camera, TweenInfo.new(Time), {CFrame = CFrameEnd})
+look:Play()
+ 
+wait(1)
+
+local CFrameEnd = CFrame.new(-22.4759483, 7.53264141, -15.4288788, 0.0171882678, -0.256928504, 0.966277599, 0, 0.966420412, 0.256966472, -0.9998523, -0.00441680849, 0.0166110918)
+local Time = 2
+local lookon =  game:GetService("TweenService"):Create(game.Workspace.Camera, TweenInfo.new(Time), {CFrame = CFrameEnd})
+lookon:Play()
+
+elseif getgenv().looking == true then
+game.Workspace.Camera.CameraType = "Custom"
+getgenv().looking = false
+end
+end)
+wait(0.5)
+tab1:Section("Weapons")
+tab1:Button("Obtain Ice Potion",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	for i,v in pairs(game:GetService("Workspace").Map.System:GetDescendants()) do
+	if v.Name == ("Big Freezer") then
+	speaker.Character:FindFirstChildOfClass("Humanoid").Sit = true
+
+	local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local currentY = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local currentZ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.System["Big Freezer"].FreezeModel.HitBox.CFrame
+	wait(0.3)
+	game.Players.localPlayer.Character:FindFirstChildOfClass("Humanoid").Jump = true
+
+	for _,no3 in pairs(game:GetService("Workspace").Map.System["Big Freezer"].FreezeModel:GetDescendants()) do
+	if no3:IsA("ClickDetector") then
+	fireclickdetector(no3)
+	end
+	end
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentX, currentY, currentZ)
+	wait(0.1)
+	game.Players.localPlayer.Backpack:FindFirstChild("Ice Potion").Name = "Zawardo Potion"
+	wait(0.1)
+	game.Players.localPlayer.Backpack:FindFirstChild("Zawardo Potion").ToolTip = "JoJo A Reference!"
+
+	elseif v.Name == ("Freezer") then
+	speaker.Character:FindFirstChildOfClass("Humanoid").Sit = true
+	local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local currentY = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local currentZ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.System.Freezer.FreezeModel.Handle.CFrame
+	wait(0.3)
+	game.Players.localPlayer.Character:FindFirstChildOfClass("Humanoid").Jump = true
+
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentX, currentY, currentZ)
+	wait(0.1)
+	game.Players.localPlayer.Backpack:FindFirstChild("Ice Potion").Name = "Zawardo Potion"
+	wait(0.1)
+	game.Players.localPlayer.Backpack:FindFirstChild("Zawardo Potion").ToolTip = "JoJo A Reference!"
+
+
+	elseif v.Name == ("Refrigerator Hallway") then
+	speaker.Character:FindFirstChildOfClass("Humanoid").Sit = true
+	local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local currentY = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local currentZ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.System["Refrigerator Hallway"].FreezeModel.HitBox.CFrame
+	wait(0.3)
+	game.Players.localPlayer.Character:FindFirstChildOfClass("Humanoid").Jump = true
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentX, currentY, currentZ)
+	wait(0.3)
+	game.Players.localPlayer.Backpack:FindFirstChild("Ice Potion").Name = "Zawardo Potion"
+	wait(0.3)
+	game.Players.localPlayer.Backpack:FindFirstChild("Zawardo Potion").ToolTip = "JoJo A Reference!"
+
+
+	end
+	end
+	end)
+tab1:Button("Obtain Knife",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	for i,v in pairs(game:GetService("Workspace").Map.System:GetDescendants()) do
+	if v.Name == ("KnifeObby") then
+	speaker.Character:FindFirstChildOfClass("Humanoid").Sit = true
+
+	local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local currentY = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local currentZ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.System.KnifeObby.KnifeCollection.Handle.CFrame
+	wait(0.3)
+
+	for _,no1 in pairs(game:GetService("Workspace").Map.System.KnifeObby.KnifeCollection:GetDescendants()) do
+	if no1:IsA("ClickDetector") then
+	fireclickdetector(no1)
+	end
+	end
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentX, currentY, currentZ)
+
+	game.Players.localPlayer.Character:FindFirstChildOfClass("Humanoid").Jump = true
+
+	elseif v.Name == ("Volatile Facility") then
+	local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local currentY = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local currentZ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.System["Volatile Facility"].KnifeCollection.Handle.CFrame
+
+	wait(0.3)
+
+	for _,no2 in pairs(game:GetService("Workspace").Map.System["Volatile Facility"].KnifeCollection:GetDescendants()) do
+	if no2:IsA("ClickDetector") then
+	fireclickdetector(no2)
+	end
+	end
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentX, currentY, currentZ)
+	elseif v.Name == ("Streets") then
+	local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local currentY = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local currentZ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.System.Streets.KnifeCollection.Handle.CFrame
+
+	wait(0.3)
+	for _,no3 in pairs(game:GetService("Workspace").Map.System.Streets.KnifeCollection:GetDescendants()) do
+	if no3:IsA("ClickDetector") then
+	fireclickdetector(no3)
+	end
+	end
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentX, currentY, currentZ)
+	elseif v.Name == ("Ball Ramp") then
+	local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local currentY = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local currentZ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.System["Ball Ramp"].KnifeCollection.Handle.CFrame
+
+	wait(0.3)
+	for _,no4 in pairs(game:GetService("Workspace").Map.System["Ball Ramp"].KnifeCollection:GetDescendants()) do
+	if no4:IsA("ClickDetector") then
+	fireclickdetector(no4)
+	end
+	end
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentX, currentY, currentZ)
+	end end end)
+tab1:Button("Obtain Hatchet",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	for i,v in pairs(game:GetService("Workspace").Map.System:GetDescendants()) do
+	if v.Name == ("Lumbermill") then
+	local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local currentY = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local currentZ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.System.Lumbermill.ButtonSystem.SpawnLogs.CFrame
+	wait(0.3)
+	for _,no3 in pairs(game:GetService("Workspace").Map.System.Lumbermill.HatchetCollection:GetDescendants()) do
+	if no3:IsA("ClickDetector") then
+	fireclickdetector(no3)
+	end
+	end
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentX, currentY, currentZ)
+	elseif v.Name == ("Dead Forest") then
+	game.Players.localPlayer.Character:FindFirstChildOfClass("Humanoid").Sit = true
+
+	local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local currentY = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local currentZ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.System["Dead Forest"].HatchetCollection.Handle.CFrame
+	wait(0.3)
+	for _,no3 in pairs(game:GetService("Workspace").Map.System["Dead Forest"].HatchetCollection:GetDescendants()) do
+	if no3:IsA("ClickDetector") then
+	fireclickdetector(no3)
+	end
+	end
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentX, currentY, currentZ)
+
+	game.Players.localPlayer.Character:FindFirstChildOfClass("Humanoid").Jump = true
+
+	elseif v.Name == ("Abandoned House") then
+	local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local currentY = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local currentZ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.System["Abandoned House"].HitBox.CFrame
+	wait(0.3)
+	for _,no3 in pairs(game:GetService("Workspace").Map.System["Abandoned House"].HatchetCollection:GetDescendants()) do
+	if no3:IsA("ClickDetector") then
+	fireclickdetector(no3)
+	end
+	end
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentX, currentY, currentZ)
+
+	end end end)
+tab1:Button("Obtain HandGun",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	for i,v in pairs(game:GetService("Workspace").Map.System:GetDescendants()) do
+	if v.Name == ("Boiler Room") then
+	game.Players.localPlayer.Character:FindFirstChildOfClass("Humanoid").Sit = true
+
+	local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local currentY = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local currentZ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.System["Boiler Room"].GunCollection.Slide.CFrame
+	wait(0.3)
+	game.Players.localPlayer.Character:FindFirstChildOfClass("Humanoid").Jump = true
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentX, currentY, currentZ)
+
+
+
+	elseif v.Name == ("Nuclear Site") then
+	local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local currentY = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local currentZ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.System["Nuclear Site"].ActionBricks["Big Rubber Duck."].CFrame
+	wait(0.3)
+	for _,no3 in pairs(game:GetService("Workspace").Map.System["Nuclear Site"].GunCollection:GetDescendants()) do
+	if no3:IsA("ClickDetector") then
+	fireclickdetector(no3)
+	end
+	end
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentX, currentY, currentZ)
+
+	end end end)
+tab1:Button("Obtain ShotGun",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	for _,v in pairs(game:GetService("Workspace").Map.System:GetDescendants()) do
+if v.Name == ("Shaky Magma")  then
+    game:GetService("Workspace").Map.System["Shaky Magma"].KillParts.KillAll:Destroy()
+    game.Players.LocalPlayer.Character.Humanoid.Sit = true
+	local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local currentY = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local currentZ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+	
+	
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.System["Shaky Magma"].ShotgunCollection.Handle.CFrame
+	wait(0.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentX, currentY, currentZ)
+	
+	
+elseif v.Name == ("Shotgun Access") then
+    game.Players.LocalPlayer.Character.Humanoid.Sit = true
+	local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local currentY = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local currentZ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+	
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  game:GetService("Workspace").Map.System["Shotgun Access"].ShotgunCollection.Handle.CFrame
+	wait(0.3)
+	game.Players.localPlayer.Character:FindFirstChildOfClass("Humanoid").Jump = true
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentX, currentY, currentZ)
+	
+	
+
+end
+end
+end)
+	wait(0.5)
+-----------S----U----S----C----A----V----E----------
+tab1:Section("Mods")
+tab1:Button("NoCD Infec",function(state)
+	local StarterGui = game:GetService("StarterGui")
+
+	local Callback = Instance.new("BindableFunction")
+
+	local args = game.Players.localPlayer
+
+
+	function Callback.OnInvoke(response)
+
+	if response == "ON" then
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	if no5 then
+	no5:Disconnect()
+	end
+	local function no5Func()
+	if game.Players.localPlayer.Character.Stats.Infected.Value == true then
+	wait(0.1)
+	game.Players.localPlayer.Character.Infected.Infect.Cooldown.Value = 1
+	end
+	end
+	no5 = game:GetService("RunService").RenderStepped:Connect(no5Func)
+	elseif response == "OFF" then
+
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	if no5 then
+	no5:Disconnect()
+	end
+
+
+	end
+
+	end
+
+	StarterGui:SetCore("SendNotification", {
+
+		Title = "NoCD Smile Infec",
+
+		Text = "Toggle On or Off",
+
+
+
+		Duration = 50,
+
+		Callback = Callback,
+
+		Button1 = "ON",
+		Button2 = "OFF"
+	})
+end)
+tab1:Button("NoCD Packed Ice",function(state)
+	local StarterGui = game:GetService("StarterGui")
+
+	local Callback = Instance.new("BindableFunction")
+
+	local van5 = game.Players.LocalPlayer
+
+
+	function Callback.OnInvoke(response)
+
+	if response == "ON" then
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	if LoNoCD then
+	LoNoCD:Disconnect()
+	end
+	local function jFunc()
+	if game.Players.localPlayer.Backpack:FindFirstChild("Packed Ice").Cooldown.Value == 3.52 then
+	wait(0.3)
+	game.Players.localPlayer.Backpack:FindFirstChild("Packed Ice").Cooldown.Value = 0.55
+
+	end
+	end
+	LoNoCD = game:GetService("RunService").RenderStepped:Connect(jFunc)
+	elseif response == "OFF" then
+
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	if LoNoCD then
+	LoNoCD:Disconnect()
+	end
+
+
+	end
+
+	end
+
+	StarterGui:SetCore("SendNotification", {
+
+		Title = "NoCD Packed Ice",
+
+		Text = "Toggle On or Off",
+
+
+
+		Duration = 50,
+
+		Callback = Callback,
+
+		Button1 = "ON",
+		Button2 = "OFF"
+	})
+
+	end)
+tab1:Button("NoCD Branch",function(state)
+	local StarterGui = game:GetService("StarterGui")
+
+	local Callback = Instance.new("BindableFunction")
+
+	local police = game.Players.LocalPlayer
+
+
+	function Callback.OnInvoke(response)
+
+	if response == "ON" then
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	if fbi then
+	fbi:Disconnect()
+	end
+	local function fbi()
+	if game.Players.localPlayer.Backpack.Branch.Cooldown.Value == 4.4 then
+	wait(0.3)
+	game.Players.localPlayer.Backpack.Branch.Cooldown.Value = 0.58
+
+
+	end
+	end
+	fbi = game:GetService("RunService").RenderStepped:Connect(fbi)
+	elseif response == "OFF" then
+
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	if brightLoNoCD then
+	brightLoNoCD:Disconnect()
+	end
+
+
+	end
+
+	end
+
+	StarterGui:SetCore("SendNotification", {
+
+		Title = "NoCD Branch",
+
+		Text = "Toggle On or Off",
+
+
+
+		Duration = 50,
+
+		Callback = Callback,
+
+		Button1 = "ON",
+		Button2 = "OFF"
+	})
+
+	end)
+wait(0.5)
+tab1:Button("NoCD Bottle",function(state)
+	local StarterGui = game:GetService("StarterGui")
+
+	local Callback = Instance.new("BindableFunction")
+
+	local player = game.Players.LocalPlayer
+
+
+	function Callback.OnInvoke(response)
+
+	if response == "ON" then
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	if no2 then
+	no2:Disconnect()
+	end
+	local function no2Func()
+	if game.Players.localPlayer.Backpack.Bottle.Cooldown.Value == 2 then
+	wait(0.3)
+	game.Players.localPlayer.Backpack.Bottle.Cooldown.Value = 0.99
+
+	end
+	end
+	no2 = game:GetService("RunService").RenderStepped:Connect(no2Func)
+	elseif response == "OFF" then
+
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	if no2 then
+	no2:Disconnect()
+	end
+
+
+	end
+
+	end
+
+	StarterGui:SetCore("SendNotification", {
+
+		Title = "NoCD Bottle",
+
+		Text = "Toggle On or Off",
+
+
+
+		Duration = 50,
+
+		Callback = Callback,
+
+		Button1 = "ON",
+		Button2 = "OFF"
+	})
+	end)
+tab1:Button("NoCD Bat",function(state)
+	local StarterGui = game:GetService("StarterGui")
+
+	local Callback = Instance.new("BindableFunction")
+
+	local player = game.Players.LocalPlayer
+
+
+	function Callback.OnInvoke(response)
+
+	if response == "ON" then
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	if no3 then
+	no3:Disconnect()
+	end
+	local function no3Func()
+	if game.Players.localPlayer.Backpack.Bat.Cooldown.Value == 2 then
+	wait(0.3)
+	game.Players.localPlayer.Backpack.Bat.Cooldown.Value = 1.0
+	end
+	end
+	no3 = game:GetService("RunService").RenderStepped:Connect(no3Func)
+	elseif response == "OFF" then
+
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	if no3 then
+	no3:Disconnect()
+	end
+
+
+	end
+
+	end
+
+	StarterGui:SetCore("SendNotification", {
+
+		Title = "NoCD Bat",
+
+		Text = "Toggle On or Off",
+
+
+
+		Duration = 50,
+
+		Callback = Callback,
+
+		Button1 = "ON",
+		Button2 = "OFF"
+	})
+	end)
+tab1:Button("NoCD Katana",function(state)
+	local StarterGui = game:GetService("StarterGui")
+
+	local Callback = Instance.new("BindableFunction")
+
+	local player = game.Players.LocalPlayer
+
+
+	function Callback.OnInvoke(response)
+
+	if response == "ON" then
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	if no6 then
+	no6:Disconnect()
+	end
+	local function no6Func()
+	if game.Players.localPlayer.Backpack.Katana.Cooldown.Value == 0.34 then
+	wait(0.3)
+	game.Players.localPlayer.Backpack.Katana.Cooldown.Value = 0.15
+	end
+	end
+	no6 = game:GetService("RunService").RenderStepped:Connect(no6Func)
+	elseif response == "OFF" then
+
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	if no6 then
+	no6:Disconnect()
+	end
+
+
+	end
+
+	end
+
+	StarterGui:SetCore("SendNotification", {
+
+		Title = "NoCD Katana",
+
+		Text = "Toggle On or Off",
+
+
+
+		Duration = 50,
+
+		Callback = Callback,
+
+		Button1 = "ON",
+		Button2 = "OFF"
+	})
+	end)
+tab1:Button("Anti Stun",function(state)
+	local StarterGui = game:GetService("StarterGui")
+
+	local Callback = Instance.new("BindableFunction")
+
+	local player = game.Players.LocalPlayer
+
+
+	function Callback.OnInvoke(response)
+
+	if response == "ON" then
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	if no4 then
+	no4:Disconnect()
+	end
+	local function no4Func()
+	if game.Players.localPlayer.Character.Stats.Downed.Value == true then
+	game.Players.localPlayer.Character.Stats.Downed.Value = false
+	game.Players.localPlayer.Character.Stats.Ragdoll.Value = false
+	game.Players.localPlayer.Character.Humanoid.WalkSpeed = 18
+	game.Players.localPlayer.PlayerGui.TouchGui.TouchControlFrame.JumpButton.Visible = true
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+	elseif game.Players.localPlayer.Character.Stats.Ragdoll.Value == true then
+	game.Players.localPlayer.Character.Stats.Ragdoll.Value = false
+	end
+	end
+	no4 = game:GetService("RunService").RenderStepped:Connect(no4Func)
+	elseif response == "OFF" then
+
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	if no4 then
+	no4:Disconnect()
+	end
+
+
+	end
+
+	end
+
+	StarterGui:SetCore("SendNotification", {
+
+		Title = "Anti Stun",
+
+		Text = "Toggle On or Off",
+
+
+
+		Duration = 50,
+
+		Callback = Callback,
+
+		Button1 = "ON",
+		Button2 = "OFF"
+	})
+	end)
+tab1:Button("Always Show inventory",function(state)
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	local StarterGui = game:GetService("StarterGui")
+
+	local Args = Instance.new("BindableFunction")
+
+	local player = game.Players.LocalPlayer
+
+
+	function Args.OnInvoke(response)
+
+	if response == "ON" then
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	if always_show_inventory then
+	always_show_inventory:Disconnect()
+	end
+	local function always_show_inventory_Fuc()
+	wait(0.5)
+	if game.Players.LocalPlayer.Character.Humanoid.WalkSpeed == 0 then
+	game:GetService("StarterGui"):SetCoreGuiEnabled('Backpack', true)
+
+	end
+	end
+	always_show_inventory = game:GetService("RunService").RenderStepped:Connect(always_show_inventory_Fuc)
+
+	else
+		local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	if always_show_inventory then
+	always_show_inventory:Disconnect()
+	end
+
+
+	end
+
+	end
+
+	StarterGui:SetCore("SendNotification", {
+
+		Title = "Always Show Inventory",
+
+		Text = "Toggle On or off",
+
+
+
+		Duration = 50,
+
+		Callback = Args,
+		Button1 = "ON",
+		Button2 = "OFF"
+	})
+
+
+	end)
+wait(0.5)
+tab1:Button("Anti Slow", function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	local StarterGui = game:GetService("StarterGui")
+
+	local Args = Instance.new("BindableFunction")
+
+	local player = game.Players.LocalPlayer
+
+
+	function Args.OnInvoke(response)
+
+	if response == "ON" then
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	if anti_slow then
+	anti_slow:Disconnect()
+	end
+	local function anti_slow_Fuc()
+	if game.Players.LocalPlayer.Character.Humanoid.WalkSpeed == 5 then
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 19
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+	end
+	end
+	anti_slow = game:GetService("RunService").RenderStepped:Connect(anti_slow_Fuc)
+
+	else
+		local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	if anti_slow then
+	anti_slow:Disconnect()
+	end
+
+
+	end
+
+	end
+
+	StarterGui:SetCore("SendNotification", {
+
+		Title = "Anti Slow",
+
+		Text = "Toggle On or Off",
+
+
+
+		Duration = 50,
+
+		Callback = Args,
+		Button1 = "ON",
+		Button2 = "OFF"
+	})
+
+
+	end)
+--[-----------------------------]--
+tab1:Section("Misc")
+tab1:Button("Vehicle Fly Gui",function(state)
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+local Flymguiv2 = Instance.new("ScreenGui")
+local Drag = Instance.new("Frame")
+local FlyFrame = Instance.new("Frame")
+local ddnsfbfwewefe = Instance.new("TextButton")
+local Speed = Instance.new("TextBox")
+local Fly = Instance.new("TextButton")
+local Speeed = Instance.new("TextLabel")
+local Stat = Instance.new("TextLabel")
+local Stat2 = Instance.new("TextLabel")
+local Unfly = Instance.new("TextButton")
+local Vfly = Instance.new("TextLabel")
+local Close = Instance.new("TextButton")
+local Minimize = Instance.new("TextButton")
+local Flyon = Instance.new("Frame")
+local W = Instance.new("TextButton")
+local S = Instance.new("TextButton")
+
+
+
+Flymguiv2.Name = "Flym gui v2"
+Flymguiv2.Parent = game.CoreGui
+Flymguiv2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Drag.Name = "Drag"
+Drag.Parent = Flymguiv2
+Drag.Active = true
+Drag.BackgroundColor3 = Color3.fromRGB(0, 150, 191)
+Drag.BorderSizePixel = 0
+Drag.Draggable = true
+Drag.Position = UDim2.new(0.482438415, 0, 0.454874992, 0)
+Drag.Size = UDim2.new(0, 237, 0, 27)
+
+FlyFrame.Name = "FlyFrame"
+FlyFrame.Parent = Drag
+FlyFrame.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+FlyFrame.BorderSizePixel = 0
+FlyFrame.Draggable = true
+FlyFrame.Position = UDim2.new(-0.00200000009, 0, 0.989000022, 0)
+FlyFrame.Size = UDim2.new(0, 237, 0, 139)
+
+ddnsfbfwewefe.Name = "ddnsfbfwewefe"
+ddnsfbfwewefe.Parent = FlyFrame
+ddnsfbfwewefe.BackgroundColor3 = Color3.fromRGB(0, 150, 191)
+ddnsfbfwewefe.BorderSizePixel = 0
+ddnsfbfwewefe.Position = UDim2.new(-0.000210968778, 0, -0.00395679474, 0)
+ddnsfbfwewefe.Size = UDim2.new(0, 237, 0, 27)
+ddnsfbfwewefe.Font = Enum.Font.SourceSans
+ddnsfbfwewefe.Text = "Made by WarriorRoberr"
+ddnsfbfwewefe.TextColor3 = Color3.fromRGB(255, 255, 255)
+ddnsfbfwewefe.TextScaled = true
+ddnsfbfwewefe.TextSize = 14.000
+ddnsfbfwewefe.TextWrapped = true
+
+Speed.Name = "Speed"
+Speed.Parent = FlyFrame
+Speed.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+Speed.BorderColor3 = Color3.fromRGB(0, 0, 191)
+Speed.BorderSizePixel = 0
+Speed.Position = UDim2.new(0.445025861, 0, 0.402877688, 0)
+Speed.Size = UDim2.new(0, 111, 0, 33)
+Speed.Font = Enum.Font.SourceSans
+Speed.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+Speed.Text = "50"
+Speed.TextColor3 = Color3.fromRGB(255, 255, 255)
+Speed.TextScaled = true
+Speed.TextSize = 14.000
+Speed.TextWrapped = true
+
+Fly.Name = "Fly"
+Fly.Parent = FlyFrame
+Fly.BackgroundColor3 = Color3.fromRGB(0, 150, 191)
+Fly.BorderSizePixel = 0
+Fly.Position = UDim2.new(0.0759493634, 0, 0.705797076, 0)
+Fly.Size = UDim2.new(0, 199, 0, 32)
+Fly.Font = Enum.Font.SourceSans
+Fly.Text = "Enable"
+Fly.TextColor3 = Color3.fromRGB(255, 255, 255)
+Fly.TextScaled = true
+Fly.TextSize = 14.000
+Fly.TextWrapped = true
+Fly.MouseButton1Click:Connect(function()
+	local HumanoidRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+	Fly.Visible = false
+	Stat2.Text = "On"
+	Stat2.TextColor3 = Color3.fromRGB(0, 255, 0)
+	Unfly.Visible = true
+	Flyon.Visible = true
+	local BV = Instance.new("BodyVelocity",HumanoidRP)
+	local BG = Instance.new("BodyGyro",HumanoidRP)
+	BV.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+	game:GetService('RunService').RenderStepped:connect(function()
+	BG.MaxTorque = Vector3.new(math.huge,math.huge,math.huge)
+	BG.D = 5000
+	BG.P = 100000
+	BG.CFrame = game.Workspace.CurrentCamera.CFrame
+	end)
+end)
+
+Speeed.Name = "Speeed"
+Speeed.Parent = FlyFrame
+Speeed.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+Speeed.BorderSizePixel = 0
+Speeed.Position = UDim2.new(0.0759493634, 0, 0.402877688, 0)
+Speeed.Size = UDim2.new(0, 87, 0, 32)
+Speeed.ZIndex = 0
+Speeed.Font = Enum.Font.SourceSans
+Speeed.Text = "Speed:"
+Speeed.TextColor3 = Color3.fromRGB(255, 255, 255)
+Speeed.TextScaled = true
+Speeed.TextSize = 14.000
+Speeed.TextWrapped = true
+
+Stat.Name = "Stat"
+Stat.Parent = FlyFrame
+Stat.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+Stat.BorderSizePixel = 0
+Stat.Position = UDim2.new(0.299983799, 0, 0.239817441, 0)
+Stat.Size = UDim2.new(0, 85, 0, 15)
+Stat.Font = Enum.Font.SourceSans
+Stat.Text = "Status:"
+Stat.TextColor3 = Color3.fromRGB(255, 255, 255)
+Stat.TextScaled = true
+Stat.TextSize = 14.000
+Stat.TextWrapped = true
+
+Stat2.Name = "Stat2"
+Stat2.Parent = FlyFrame
+Stat2.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+Stat2.BorderSizePixel = 0
+Stat2.Position = UDim2.new(0.546535194, 0, 0.239817441, 0)
+Stat2.Size = UDim2.new(0, 27, 0, 15)
+Stat2.Font = Enum.Font.SourceSans
+Stat2.Text = "Off"
+Stat2.TextColor3 = Color3.fromRGB(255, 0, 0)
+Stat2.TextScaled = true
+Stat2.TextSize = 14.000
+Stat2.TextWrapped = true
+
+Unfly.Name = "Unfly"
+Unfly.Parent = FlyFrame
+Unfly.BackgroundColor3 = Color3.fromRGB(0, 150, 191)
+Unfly.BorderSizePixel = 0
+Unfly.Position = UDim2.new(0.0759493634, 0, 0.705797076, 0)
+Unfly.Size = UDim2.new(0, 199, 0, 32)
+Unfly.Visible = false
+Unfly.Font = Enum.Font.SourceSans
+Unfly.Text = "Disable"
+Unfly.TextColor3 = Color3.fromRGB(255, 255, 255)
+Unfly.TextScaled = true
+Unfly.TextSize = 14.000
+Unfly.TextWrapped = true
+Unfly.MouseButton1Click:Connect(function()
+	local HumanoidRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+	Fly.Visible = true
+	Stat2.Text = "Off"
+	Stat2.TextColor3 = Color3.fromRGB(255, 0, 0)
+	wait()
+	Unfly.Visible = false
+	Flyon.Visible = false
+	HumanoidRP:FindFirstChildOfClass("BodyVelocity"):Destroy()
+	HumanoidRP:FindFirstChildOfClass("BodyGyro"):Destroy()
+end)
+
+Vfly.Name = "Vfly"
+Vfly.Parent = Drag
+Vfly.BackgroundColor3 = Color3.fromRGB(0, 150, 191)
+Vfly.BorderSizePixel = 0
+Vfly.Size = UDim2.new(0, 57, 0, 27)
+Vfly.Font = Enum.Font.SourceSans
+Vfly.Text = "VFly"
+Vfly.TextColor3 = Color3.fromRGB(255, 255, 255)
+Vfly.TextScaled = true
+Vfly.TextSize = 14.000
+Vfly.TextWrapped = true
+
+Close.Name = "Close"
+Close.Parent = Drag
+Close.BackgroundColor3 = Color3.fromRGB(0, 150, 191)
+Close.BorderSizePixel = 0
+Close.Position = UDim2.new(0.875, 0, 0, 0)
+Close.Size = UDim2.new(0, 27, 0, 27)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close.TextScaled = true
+Close.TextSize = 14.000
+Close.TextWrapped = true
+Close.MouseButton1Click:Connect(function()
+	Flymguiv2:Destroy()
+end)
+
+Minimize.Name = "Minimize"
+Minimize.Parent = Drag
+Minimize.BackgroundColor3 = Color3.fromRGB(0, 150, 191)
+Minimize.BorderSizePixel = 0
+Minimize.Position = UDim2.new(0.75, 0, 0, 0)
+Minimize.Size = UDim2.new(0, 27, 0, 27)
+Minimize.Font = Enum.Font.SourceSans
+Minimize.Text = "-"
+Minimize.TextColor3 = Color3.fromRGB(255, 255, 255)
+Minimize.TextScaled = true
+Minimize.TextSize = 14.000
+Minimize.TextWrapped = true
+function Mini()
+	if Minimize.Text == "-" then
+		Minimize.Text = "+"
+		FlyFrame.Visible = false
+	elseif Minimize.Text == "+" then
+		Minimize.Text = "-"
+		FlyFrame.Visible = true
+	end
+end
+Minimize.MouseButton1Click:Connect(Mini)
+
+Flyon.Name = "Fly on"
+Flyon.Parent = Flymguiv2
+Flyon.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Flyon.BorderSizePixel = 0
+Flyon.Position = UDim2.new(0.117647067, 0, 0.550284624, 0)
+Flyon.Size = UDim2.new(0.148000002, 0, 0.314999998, 0)
+Flyon.Visible = false
+Flyon.Active = true
+Flyon.Draggable = true
+
+W.Name = "W"
+W.Parent = Flyon
+W.BackgroundColor3 = Color3.fromRGB(0, 150, 191)
+W.BorderSizePixel = 0
+W.Position = UDim2.new(0.134719521, 0, 0.0152013302, 0)
+W.Size = UDim2.new(0.708999991, 0, 0.499000013, 0)
+W.Font = Enum.Font.SourceSans
+W.Text = "^"
+W.TextColor3 = Color3.fromRGB(255, 255, 255)
+W.TextScaled = true
+W.TextSize = 14.000
+W.TextWrapped = true
+W.TouchLongPress:Connect(function()
+	local HumanoidRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * 0
+end)
+
+W.MouseButton1Click:Connect(function()
+	local HumanoidRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * 0
+end)
+
+S.Name = "S"
+S.Parent = Flyon
+S.BackgroundColor3 = Color3.fromRGB(0, 150, 191)
+S.BorderSizePixel = 0
+S.Position = UDim2.new(0.134000003, 0, 0.479999989, 0)
+S.Rotation = 180.000
+S.Size = UDim2.new(0.708999991, 0, 0.499000013, 0)
+S.Font = Enum.Font.SourceSans
+S.Text = "^"
+S.TextColor3 = Color3.fromRGB(255, 255, 255)
+S.TextScaled = true
+S.TextSize = 14.000
+S.TextWrapped = true
+S.TouchLongPress:Connect(function()
+	local HumanoidRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * 0
+end)
+
+S.MouseButton1Click:Connect(function()
+	local HumanoidRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+	wait(.1)
+	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * 0
+end)
+	end)
+tab1:Button("Seat",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	game:GetService("Workspace").Map.ConstantTerrain.Model.Seat.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+	end)
+tab1:Button("Add Ladders To The Fortress",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	box = Instance.new("TrussPart",workspace)
+
+	box.Anchored = true
+	box.CanCollide = true
+	box.Size = Vector3.new(2,16,2)
+	box.Position = Vector3.new(-314.34,5.95,18.77)
+
+	box = Instance.new("TrussPart",workspace)
+
+	box.Anchored = true
+	box.CanCollide = true
+	box.Size = Vector3.new(2,15,2)
+	box.Position = Vector3.new(-314.49,7.5,-28.55)
+
+	end)
+tab1:Button("Destroy The Fortress Door",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	game:GetService("Workspace").Map.ConstantTerrain.KillGateSwitcher.Gate:Destroy()
+
+	end)
+tab1:Button("Destroy Lava Spears",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	game:GetService("Workspace").Map.Misc.Spearer.Spear1.Spear.Spearhead: Destroy ()
+
+	wait()
+	game:GetService("Workspace").Map.Misc.Spearer.Spear2.Spear.Spearhead: Destroy ()
+	wait()
+	game:GetService("Workspace").Map.Misc.Spearer.Spear3.Spear.Spearhead: Destroy ()
+	end)
+tab1:Button("F3X",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
+	end)
+-----------S----U----S----C----A----V----E----------
+tab1:Section("Locations")
+tab1:Button("Teleport to Fortress",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-315.942, 17, 3.186)
+
+	end)
+tab1:Button("Teleport to Area 1",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-52.123, 3, -2.638)
+	end)
+tab1:Button("Teleport to Area 2",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-110.646, 1.72, 2.051)
+	end)
+tab1:Button("Teleport to Area 3",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-165.713, 1.614, -1.493)
+	end)
+tab1:Button("Teleport to Area 4",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-231.508, 3, -2.565)
+
+	end)
+tab1:Button("Teleport to Area 5",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-289.155, 3, -2.37)
+	end)
+tab1:Button("Teleport to Smile Spawn",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-312.441, 12, -47.267)
+	end)
+tab1:Button("Teleport Outside",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(35.009, 3, -10.013)
+	end)
+-----------S----U----S----C----A----V----E----------
+wait(1)
+-----------------------------
+tab2:Toggle("ESP",function(state)
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	if state then
+	_G.on = true
+	if _G.on == true then
+	getgenv().enabled = true --Toggle on/off
+	getgenv().uselocalplayer = false --Choose whether the ESP highlights LocalPlayer or not
+	getgenv().filluseteamcolor = true --Toggle fill color using player team color on/off
+	getgenv().outlineuseteamcolor = false --Toggle outline color using player team color on/off
+	getgenv().fillcolor = Color3.new(0, 0, 0) --Change fill color, no need to edit if using team color
+	getgenv().outlinecolor = Color3.new(255, 255, 255) --Change outline color, no need to edit if using team color
+	getgenv().filltrans = 0.2 --Change fill transparency
+	getgenv().outlinetrans = 1 --Change outline transparency
+
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/zntly/highlight-esp/main/esp.lua"))()
+
+	end
+
+
+	else
+		_G.on = false
+	if _G.on == false then
+	getgenv().enabled = false --Toggle on/off
+	getgenv().uselocalplayer = false --Choose whether the ESP highlights LocalPlayer or not
+	getgenv().filluseteamcolor = true --Toggle fill color using player team color on/off
+	getgenv().outlineuseteamcolor = false --Toggle outline color using player team color on/off
+	getgenv().fillcolor = Color3.new(0, 0, 0) --Change fill color, no need to edit if using team color
+	getgenv().outlinecolor = Color3.new(255, 255, 255) --Change outline color, no need to edit if using team color
+	getgenv().filltrans = 0.2 --Change fill transparency
+	getgenv().outlinetrans = 1 --Change outline transparency
+
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/zntly/highlight-esp/main/esp.lua"))()
+	end
+	end
+	game.Players.PlayerAdded:Connect(function()
+		getgenv().enabled = false --Toggle on/off
+		getgenv().uselocalplayer = false --Choose whether the ESP highlights LocalPlayer or not
+		getgenv().filluseteamcolor = true --Toggle fill color using player team color on/off
+		getgenv().outlineuseteamcolor = false --Toggle outline color using player team color on/off
+		getgenv().fillcolor = Color3.new(0, 0, 0) --Change fill color, no need to edit if using team color
+		getgenv().outlinecolor = Color3.new(255, 255, 255) --Change outline color, no need to edit if using team color
+		getgenv().filltrans = 0.2 --Change fill transparency
+		getgenv().outlinetrans = 1 --Change outline transparency
+
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/zntly/highlight-esp/main/esp.lua"))()
+		wait()
+		getgenv().enabled = true --Toggle on/off
+		getgenv().uselocalplayer = false --Choose whether the ESP highlights LocalPlayer or not
+		getgenv().filluseteamcolor = true --Toggle fill color using player team color on/off
+		getgenv().outlineuseteamcolor = false --Toggle outline color using player team color on/off
+		getgenv().fillcolor = Color3.new(0, 0, 0) --Change fill color, no need to edit if using team color
+		getgenv().outlinecolor = Color3.new(255, 255, 255) --Change outline color, no need to edit if using team color
+		getgenv().filltrans = 0.2 --Change fill transparency
+		getgenv().outlinetrans = 1 --Change outline transparency
+
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/zntly/highlight-esp/main/esp.lua"))()
+		end)
+	end)
+tab3:Button("Turn On Reach v2", function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	if Reach.Visible == true then
+	Reach.Visible = false
+	wait()
+	Reachv2.Visible = true
+    elseif Reach.Visible == false then
+	Reach.Visible = true
+	Reachv2.Visible = false
+	end
+	end)
+tab3:Button("Delete Infectors (Some)",function()
+	for i,v in pairs(game.Workspace:GetDescendants()) do
+	if v.Name == "Infector" then
+	v:Destroy()
+	end
+	end
+	end)
+TextButton.Name = "open"
+TextButton.Position = UDim2.new(0.9, 38, 0.01, 0)
+TextButton.Parent = ScreenGui
+TextButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+TextButton.Size = UDim2.new(0, 30, 0, 24)
+TextButton.Font = Enum.Font.Cartoon
+TextButton.Text = "Open"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 13.000
+TextButton.Visible = true
+TextButton.MouseButton1Click:connect(function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+Library:ToggleUI()
+if Open then
+Library:ToggleUI()
+TextButton.BackgroundColor3 = Color3.fromRGB(255,0,0)
+TextButton.Text = "Close"
+Open = false
+else
+Library:ToggleUI()
+TextButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+TextButton.Text = "Open"
+Open = true
+end
+	end)
+n2.Name = "#"
+n2.Parent = ScreenGui
+n2.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+n2.BackgroundTransparency = 0
+n2.BorderSizePixel = 1
+n2.Position = UDim2.new(0.8379999, 91, 0.09, 0)
+n2.Size = UDim2.new(0, 30, 0, 24)
+n2.Font = Enum.Font.SciFi
+n2.Text = "Smile infec Reach"
+n2.TextColor3 = Color3.fromRGB(255, 255, 255)
+n2.TextScaled = true
+n2.Draggable = false
+n2.MouseButton1Up:Connect(function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://413861777"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	game.Players.localPlayer.Character.Torso.Part.Size = Vector3.new(4, 0.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001, 28)
+
+
+
+
+
+
+	local selectionBox = Instance.new("SelectionBox",game.Players.localPlayer.Character.Torso.Part)
+	selectionBox.Adornee = game.Players.localPlayer.Character.Torso.Part
+	SurfaceSelection = 0
+	selectionBox.Transparency = 0.3
+
+	end)
+n3.Name = "n3"
+n3.Parent = ScreenGui
+n3.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+n3.BackgroundTransparency = 0
+n3.BorderSizePixel = 1
+n3.Position = UDim2.new(0.837, 92, 0.17, 0)
+n3.Size = UDim2.new(0, 30, 0, 24)
+n3.Font = Enum.Font.SciFi
+n3.Text = "Seat"
+n3.TextColor3 = Color3.fromRGB(255, 255, 255)
+n3.TextScaled = true
+n3.Draggable = false
+n3.MouseButton1Up:Connect(function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	game:GetService("Workspace").Map.ConstantTerrain.Model.Seat.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+	end)
+me.Parent = ScreenGui
+me.BackgroundColor3 = Color3.fromRGB(0,255,0)
+me.Position = UDim2.new(0.8379999, 56, 0.01, 0)
+me.Size = UDim2.new(0, 30, 0, 24)
+tButton.Parent = me
+tButton.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+tButton.Size = UDim2.new(0, 30, 0, 24)
+tButton.Font = Enum.Font.SciFi
+tButton.Text = "Get Near Tools"
+tButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+tButton.TextScaled = true
+tButton.MouseButton1Click:connect(function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://413861777"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	for _,v in pairs(game:GetService("Workspace").Map:GetDescendants()) do
+	if v:IsA("ClickDetector") then
+	fireclickdetector(v)
+	end
+	end
+	end)
+Reach.Name = "Reach"
+Reach.Parent = ScreenGui
+Reach.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+Reach.BackgroundTransparency = 0
+Reach.BorderSizePixel = 1
+Reach.Position = UDim2.new(0.837, 56, 0.094, 0)
+Reach.Size = UDim2.new(0, 30, 0, 24)
+Reach.Font = Enum.Font.SciFi
+Reach.Text = "Reach"
+Reach.TextColor3 = Color3.fromRGB(255, 255, 255)
+Reach.TextScaled = true
+Reach.Draggable = false
+Reach.MouseButton1Up:Connect(function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://413861777"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	for i,e in pairs(speaker:FindFirstChildOfClass("Backpack"):GetChildren()) do
+	if e.Name == "Branch" or e.Name == "Bottle" or e.Name == "Packed Ice" or e.Name == "Spear" then
+	e.Parent = speaker.Character
+	end
+	end
+
+	for i,v in pairs(game:GetService'Players'.LocalPlayer.Character:GetChildren()) do
+	if v.Name == "Bottle" or v.Name == "Packed Ice" or v.Name == "Branch" then
+    
+	v.Handle.Massless = true
+	v.Handle.Transparency = 0.75
+	v.Handle.Size = Vector3.new(5, 10, 5)
+	local selectionBox = Instance.new("SelectionBox",v.Handle)
+	selectionBox.Adornee = v.Handle
+	SurfaceSelection = 0
+	selectionBox.Transparency = 0.9
+	speaker.Character:FindFirstChildOfClass('Humanoid'):UnequipTools()
+ 	elseif v.Name == "Spear" then
+
+
+
+	speaker.Character:FindFirstChildOfClass('Humanoid'):UnequipTools()
+
+
+	game.Players.localPlayer.Backpack.Spear.Cooldown.Value = 0.48
+	game.Players.localPlayer.Backpack.Spear.Hitbox.Massless = true
+	game.Players.localPlayer.Backpack.Spear.Hitbox.Size = Vector3.new(5, 9, 5)
+	local selectionBox = Instance.new("SelectionBox",game.Players.localPlayer.Backpack.Spear.Hitbox)
+	selectionBox.Adornee = game.Players.localPlayer.Backpack.Spear.Hitbox
+	selectionBox.Transparency = 0.9
+
+
+
+	end
+	end
+
+	end)
+GiveTool.Name = "Get Weapons"
+GiveTool.Parent = ScreenGui
+GiveTool.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+GiveTool.BackgroundTransparency = 0
+GiveTool.BorderSizePixel = 1
+GiveTool.Position = UDim2.new(0.837, 56.7, 0.173, 0)
+GiveTool.Size = UDim2.new(0, 30, 0, 24)
+GiveTool.Font = Enum.Font.SciFi
+GiveTool.Text = "Get Weapons"
+GiveTool.TextColor3 = Color3.fromRGB(255, 255, 255)
+GiveTool.TextScaled = true
+GiveTool.Draggable = false
+GiveTool.MouseButton1Up:Connect(function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	--- 2
+local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local currentY = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local currentZ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+
+     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(16.495, 3.15, 13.262)
+
+wait(0.15)
+
+	for _,no3 in pairs(game:GetService("Workspace").Map.HumanBase.Vendor.BatCollection:GetDescendants()) do
+	if no3:IsA("ClickDetector") then
+	fireclickdetector(no3)
+	for _,nok in pairs(game:GetService("Workspace").Map.HumanBase.Vendor.BottleCollection:GetDescendants()) do
+	if nok:IsA("ClickDetector") then
+	fireclickdetector(nok)
+	wait(0.1)
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentX, currentY, currentZ)
+
+	end
+	end
+   
+    end
+	end
+	end)
+Give_Tool.Name = "Give Tool To Others"
+Give_Tool.Parent = ScreenGui
+Give_Tool.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+Give_Tool.BackgroundTransparency = 0
+Give_Tool.BorderSizePixel = 1
+Give_Tool.Position = UDim2.new(0.837, 92.9, 0.26, 0)
+Give_Tool.Size = UDim2.new(0, 30, 0, 24)
+Give_Tool.Font = Enum.Font.SciFi
+Give_Tool.Text = "Give Tool"
+Give_Tool.TextColor3 = Color3.fromRGB(255, 255, 255)
+Give_Tool.TextScaled = true
+Give_Tool.Draggable = false
+Give_Tool.MouseButton1Up:Connect(function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local currentY = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local currentZ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+	game.Players.LocalPlayer.Character.Humanoid.Name = 1
+	local l = game.Players.LocalPlayer.Character["1"]:Clone()
+	l.Parent = game.Players.LocalPlayer.Character
+	l.Name = "Humanoid"
+	wait()
+	game.Players.LocalPlayer.Character["1"]:Destroy()
+	game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+	game.Players.LocalPlayer.Character.Animate.Disabled = true
+	wait()
+	game.Players.LocalPlayer.Character.Animate.Disabled = false
+
+	wait(5.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentX, currentY, currentZ)
+
+	end)
+Reachv2.Name = "Reachv2"
+Reachv2.Parent = ScreenGui
+Reachv2.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+Reachv2.BackgroundTransparency = 0
+Reachv2.BorderSizePixel = 1
+Reachv2.Position = UDim2.new(0.837, 56, 0.094, 0)
+Reachv2.Size = UDim2.new(0, 30, 0, 24)
+Reachv2.Font = Enum.Font.SciFi
+Reachv2.Text = "Reach v2"
+Reachv2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Reachv2.TextScaled = true
+Reachv2.Draggable = false
+Reachv2.Visible = false
+Reachv2.MouseButton1Up:Connect(function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://413861777"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	local mm2 = game.Players.LocalPlayer.Backpack
+	local speaker = game.Players.LocalPlayer
+	for i,e in pairs(speaker:FindFirstChildOfClass("Backpack"):GetChildren()) do
+	if e.Name == "Bat" or e.Name == "Katana" or e.Name == "Bottle" or e.Name == "Chain" then
+	e.Parent = speaker.Character
+	end
+	end
+	for i,v in pairs(game:GetService'Players'.LocalPlayer.Character:GetChildren()) do
+	if v.Name == "Bat" or v.Name == "Katana" then
+
+	v.BodyAttach.Massless = true
+	v.BodyAttach.Transparency = 0.75
+	v.BodyAttach.Size = Vector3.new(8, 5, 13)
+	local selectionBox = Instance.new("SelectionBox",v.BodyAttach)
+	selectionBox.Adornee = v.BodyAttach
+	selectionBox.Transparency = 0.9
+	speaker.Character:FindFirstChildOfClass('Humanoid'):UnequipTools()
+	else
+		for i,mmz in pairs(game:GetService'Players'.LocalPlayer.Character:GetChildren()) do
+
+	if mmz.Name == "Bottle" then
+	speaker.Character:FindFirstChildOfClass('Humanoid'):UnequipTools()
+
+	mm2.Bottle.Handle.Massless = true
+	mm2.Bottle.Handle.Transparency = 0.75
+	mm2.Bottle.Handle.Size = Vector3.new(5, 10, 5)
+	local selectionBox = Instance.new("SelectionBox",mm2.Bottle.Handle)
+	selectionBox.Adornee = mm2.Bottle.Handle
+	SurfaceSelection = 0
+	selectionBox.Transparency = 0.9
+	else
+		for i,mmh in pairs(game:GetService'Players'.LocalPlayer.Character:GetChildren()) do
+	if mmh.Name == "Chain" then
+	speaker.Character:FindFirstChildOfClass('Humanoid'):UnequipTools()
+
+	game.Players.localPlayer.Backpack.Chain.Cooldown.Value = 1.1
+	game.Players.localPlayer.Backpack.Chain.WeaponAttach.Massless = true
+	game.Players.localPlayer.Backpack.Chain.WeaponAttach.Size = Vector3.new(13, 5, 5)
+	local selectionBox = Instance.new("SelectionBox",game.Players.localPlayer.Backpack.Chain.WeaponAttach)
+	selectionBox.Adornee = game.Players.localPlayer.Backpack.Chain.WeaponAttach
+	selectionBox.Transparency = 0.9
+
+
+
+	end
+	end
+	end
+	end
+	end
+	end
+
+	end)
+BringPlayer.Name = "BringPlayer"
+BringPlayer.Parent = ScreenGui
+BringPlayer.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+BringPlayer.BackgroundTransparency = 0.7
+BringPlayer.BorderSizePixel = 1
+BringPlayer.Position = UDim2.new(0, 149, 0, -28)
+BringPlayer.Size = UDim2.new(0, 80, 0, 30)
+BringPlayer.Font = Enum.Font.SciFi
+BringPlayer.Text = "BringPlayer"
+BringPlayer.TextColor3 = Color3.fromRGB(255, 255, 255)
+BringPlayer.TextScaled = true
+BringPlayer.Draggable = false
+BringPlayer.FocusLost:connect(function()
+	for i,v in pairs(game.Players:GetChildren()) do
+	if (string.sub(string.lower(v.Name),1,string.len(BringPlayer.Text))) == string.lower(BringPlayer.Text) then
+	BringPlayer.Text = v.Name
+
+	local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local currentY = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local currentZ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+
+
+	Target = BringPlayer.Text
+	NOW = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+	game.Players.LocalPlayer.Character.Humanoid.Name = 1
+	local l = game.Players.LocalPlayer.Character["1"]:Clone()
+	l.Parent = game.Players.LocalPlayer.Character
+	l.Name = "Humanoid"
+	wait(0.1)
+	game.Players.LocalPlayer.Character["1"]:Destroy()
+	game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+	game.Players.LocalPlayer.Character.Animate.Disabled = true
+	wait(0.1)
+	game.Players.LocalPlayer.Character.Animate.Disabled = false
+	game.Players.LocalPlayer.Character.Humanoid.DisplayDistanceType = "None"
+	for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+	game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+	end
+	wait(0.5)
+	local function tp(player,player2)
+	local char1,char2 = player.Character,player2.Character
+	if char1 and char2 then
+	char1.HumanoidRootPart.CFrame = char2.HumanoidRootPart.CFrame
+	end
+	end
+	local function getout(player,player2)
+	local char1,char2 = player.Character,player2.Character
+	if char1 and char2 then
+	char1:MoveTo(char2.Head.Position)
+	end
+	end
+	tp(game.Players[Target], game.Players.LocalPlayer)
+	wait(0.1)
+	tp(game.Players[Target], game.Players.LocalPlayer)
+	wait(0.3)
+	getout(game.Players.LocalPlayer, game.Players[Target])
+	wait(1.5)
+	wait(5.21)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentX, currentY, currentZ)
+
+	end
+	end
+end)
+tab1:Section("IDK?")
+tab1:Button("Hide Your Own Key",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local Y = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local Z = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+
+	game.Players.localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-346.036, 12, -4.759)
+	wait(0.6)
+	game.Players.localPlayer.Character.Humanoid:TakeDamage(100)
+	wait(5.25)
+	game.Players.localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(X, Y, Z)
+
+	end)
+tab1:Button("Size Changer + 1",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	csize = csize + .1
+	giant(plr, csize)
+	end)
+tab1:Button("Size Changer - 1",function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	csize = csize - .1
+	giant(plr, csize)
+	end)
+Rme.Name = "Respawn me"
+Rme.Parent = ScreenGui
+Rme.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+Rme.BackgroundTransparency = 0
+Rme.BorderSizePixel = 1
+Rme.Position = UDim2.new(0, 108, 0, -28)
+Rme.Size = UDim2.new(0, 30, 0, 24)
+Rme.Font = Enum.Font.SciFi
+Rme.Text = "Respawn"
+Rme.TextColor3 = Color3.fromRGB(255, 255, 255)
+Rme.TextScaled = true
+Rme.Draggable = false
+Rme.MouseButton1Up:connect(function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1673280232"
+	sound.Parent = game:GetService("SoundService")
+	sound:Play()
+	local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
+	local currentY = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y
+	local currentZ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z
+	game.Players.LocalPlayer.Character:Destroy()
+	wait(5.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentX, currentY, currentZ)
+end)
