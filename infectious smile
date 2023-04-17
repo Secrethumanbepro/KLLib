@@ -473,7 +473,7 @@ tab1:Button("Obtain ShotGun",function()
 	sound.SoundId = "rbxassetid://1673280232"
 	sound.Parent = game:GetService("SoundService")
 	sound:Play()
-	for _,v in pairs(game:GetService(game:GetService("Workspace").Map.System:GetDescendants()) do
+	for _,v in pairs(game:GetService("Workspace").Map.System:GetDescendants()) do
 if v.Name == ("Shaky Magma")  then
     game.Players.LocalPlayer.Character.Humanoid.Sit = true
 	local currentX = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X
