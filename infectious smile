@@ -119,16 +119,8 @@ local Reachb = Instance.new("TextButton")
  
 ScreenGui.Parent = game.CoreGui
 
-game.StarterGui:SetCore("SendNotification", {
-Title = "Game Detector";
-Text = "Game Detected: Infectious Smile";
-Icon = "rbxassetid://57254792";
-Duration = 5;
-})
-
-
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/UI-Library/main/Source/MyUILib(Unamed).lua"))()
-local Window = Library:Create("Infectious Smile Lib (KLGui)") -- any name
+local Window = Library:Create("Infectious Smile") -- any name
 
 local tab1 = Window:Tab("Home")
 local tab2 = Window:Tab("ESP")
@@ -1613,7 +1605,7 @@ tab3:Button("Delete Infectors (Some)",function()
 TextButton.Name = "close"
 TextButton.Position = UDim2.new(0.8379999, 91, 0.01, 0)
 TextButton.Parent = ScreenGui
-TextButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+TextButton.BackgroundColor3 = Color3.fromRGB(255,0,0)
 TextButton.Size = UDim2.new(0, 30, 0, 24)
 TextButton.Font = Enum.Font.Cartoon
 TextButton.Text = "Close"
