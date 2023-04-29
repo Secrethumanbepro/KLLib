@@ -1047,6 +1047,20 @@ tab1:Button("Anti Slow", function()
 	end)
 --[-----------------------------]--
 tab1:Section("Misc")
+tab1:Toggle("InfJump",function(inf)
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://1673280232"
+sound.Parent = game:GetService("SoundService")
+sound:play()
+getgenv().InfJ = inf
+game:GetService("UserInputService").JumpRequest:connect(function()
+if InfJ == true then
+game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+            
+        end
+    end)
+end)
+
 tab1:Button("Vehicle Fly Gui",function(state)
 	local sound = Instance.new("Sound")
 	sound.SoundId = "rbxassetid://1673280232"
