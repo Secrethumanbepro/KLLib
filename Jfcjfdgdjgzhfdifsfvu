@@ -5,14 +5,14 @@ TrailSettings = {
 	Lifetime = 0.5,
 	Texture = 'rbxassetid://31270182',
 	--Color1 is for UpperBody and Accessories, Color2 is for Lower Body
-	Color1 = ColorSequence.new(BrickColor.new('Bright blue').Color,BrickColor.new('Bright yellow').Color),
-	Color2 = ColorSequence.new(BrickColor.new('Bright blue').Color,BrickColor.new('Bright yellow').Color),
+	Color1 = ColorSequence.new(BrickColor.new('Bright blue').Color,BrickColor.new('Really Blue').Color),
+	Color2 = ColorSequence.new(BrickColor.new('Bright blue').Color,BrickColor.new('Really Blue').Color),
 	AllBody = false,
 	UpperBodyOnly = true,
 	LowerBodyOnly = false,
 	Accessories = false,
 	Extras = true,
-	R15 = false, --Change to true if you're using R15
+	R15 = true, --Change to true if you're using R15
 	R15Parts = {
 		'UpperTorso',
 		'LowerTorso',
